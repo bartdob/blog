@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="border border-info">Blog App 1111</h1>
+    {% for post in posts%}
+    <p> {{ post.title }}</p>
+    <p>{{ post.date }}</p>
+    {% endfor %}
+{% endblock %}
+
