@@ -3,12 +3,13 @@
     {% for post in posts%}
 
     <article class="media content-section">
+      <img class="rounded-circle" style="max-height: 100;" src="{{ post.author.profile.image.url }}" alt="">
         <div class="media-body">
           <div class="article-metadata">
-            <a class="mr-2" href="#">{{ post.author }}</a>
+            <a class="mr-2" href="{{ post.author.id }}">{{ post.author }}</a>
             <small class="text-muted">{{ post.date|date:"F d - Y" }}</small>
           </div>
-          <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+          <h2><a class="article-title ml-2" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
           <p class="article-content">{{ post.content }}</p>
         </div>
       </article>
@@ -16,4 +17,3 @@
       {% endfor %}
 
 {% endblock content%}
-
