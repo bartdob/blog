@@ -32,6 +32,7 @@
           </ul>
           <form class="form-inline my-2 my-lg-0">
             {% if user.is_authenticated %}
+            <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'post-create' %}">make a post</a>
             <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'logout' %}">logout</a>
             <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'profile' %}">profile</a>
             {% else %}

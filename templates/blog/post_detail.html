@@ -16,5 +16,19 @@
     <h2 class="article-title ml-2"> {{object.title}}</h2> </h2>
     <p class="article-content">{{ object.content }}</p>
   </div>
+
+  {% if request.user == post.author %}
+        <button class="text-left btn btn-danger">
+            <a href="{% url 'post-delete' object.id %}"> Delete </a>
+        </button>
+
+        <button class="text-left btn btn-info">
+            <a href="{% url 'post-update' object.id %}"> Update </a>
+        </button>
+  {% endif %}
+
+
+
 </article>
+
 {% endblock content%}
